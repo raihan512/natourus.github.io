@@ -1,0 +1,44 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 35.93em) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone-tab {
+    @media (max-width: 47.93em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab {
+    @media (max-width: 61.93em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptop {
+    @media (max-width: 74.93em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    @media (max-width: 112.43em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

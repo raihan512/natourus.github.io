@@ -1,0 +1,52 @@
+.story {
+  padding: 6rem;
+  padding-left: 9rem;
+  width: 80%;
+  margin: 0 auto;
+  transform: skewX(-15deg);
+  background-color: rgba($color-white, 0.5);
+
+  &:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+
+  &__shape {
+    height: 15rem;
+    width: 15rem;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-3rem) skewX(15deg);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+  }
+  &__img {
+    height: 100%;
+    transition: all 0.5s;
+    transform: translateX(-4rem) scale(1.04);
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all 0.5s;
+    transform: translate(-50%, -5%);
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    color: $color-white;
+    opacity: 0;
+  }
+  &__text {
+    transform: skewX(15deg);
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &__img {
+    filter: blur(2px) brightness(80%);
+    transform: translateX(-4rem) scale(1);
+  }
+}
